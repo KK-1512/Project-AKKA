@@ -13,7 +13,7 @@ model = model_data["model"]
 FEATURES = model_data["features"]
 
 st.markdown(
-    "<h1 style='text-align: center; color: #D32F2F; font-weight: bold;'>"
+    "<h1 style='text-align: center; color: #1E88E5; font-weight: bold;'>"
     "TiN Coating Hardness Prediction System"
     "</h1>",
     unsafe_allow_html=True
@@ -28,8 +28,9 @@ tab1, tab2 = st.tabs(["Prediction", "Analysis"])
 # ================================
 # TAB 1: PREDICTION
 # ================================
-with tab1:
 
+with tab1:
+    st.markdown("## 🔹 Prediction Module")
     # IMAGE ONLY HERE
     col1, col2, col3 = st.columns([1,2,1])
 
@@ -81,7 +82,7 @@ with tab1:
 # TAB 2: ANALYSIS
 # ================================
 with tab2:
-
+    st.markdown("## 🔹 Data Analysis Dashboard")
     st.subheader("Dataset Analysis")
 
     try:
