@@ -12,7 +12,12 @@ model_data = joblib.load("cvd_model.pkl")
 model = model_data["model"]
 FEATURES = model_data["features"]
 
-st.set_page_config(page_title="CVD Hardness Predictor", layout="wide")
+st.markdown(
+    "<h1 style='text-align: center; color: #D32F2F; font-weight: bold;'>"
+    "TiN Coating Hardness Prediction System"
+    "</h1>",
+    unsafe_allow_html=True
+)
 
 st.title("TiN Coating Hardness Prediction System")
 
@@ -25,12 +30,21 @@ tab1, tab2 = st.tabs(["Prediction", "Analysis"])
 # TAB 1: PREDICTION
 # ================================
 with tab1:
-    # Display Image
-    st.image("CVD.png", width=800)
+
+    # IMAGE ONLY HERE
+    col1, col2, col3 = st.columns([1,2,1])
+
+    with col2:
+        st.image(
+            "cvd_vickers.png",
+            caption="CVD Coating & Vickers Hardness Measurement",
+            width=450
+        )
+
     st.markdown("---")
-    
+
     st.subheader("Enter CVD Parameters")
-    
+
     col1, col2 = st.columns(2)
 
     with col1:
