@@ -19,7 +19,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("TiN Coating Hardness Prediction System")
 
 # ================================
 # TABS
@@ -38,7 +37,7 @@ with tab1:
         st.image(
             "CVD.png",
             caption="CVD Coating & Vickers Hardness Measurement",
-            width=450
+            width=800
         )
 
     st.markdown("---")
