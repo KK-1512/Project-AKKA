@@ -36,14 +36,17 @@ with tab1:
    # ================================
 # PERFECT CENTERED IMAGE
 # ================================
-st.markdown(
-    """
-    <div style="text-align: center;">
-        <img src="CVD.png" width="500" style="border-radius: 10px;">
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+    # ================================
+# PERFECT CENTERED IMAGE
+# ================================
+    st.markdown(
+        """
+        <div style="text-align: center;">
+            <img src="cvd_vickers.png" width="500" style="border-radius: 10px;">
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     st.subheader("Enter CVD Parameters")
 
