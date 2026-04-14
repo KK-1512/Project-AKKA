@@ -39,8 +39,6 @@ with tab1:
     with col2:
         st.image("CVD.png", width=650)
 
-        st.markdown("---")
-
     # ================================
     # INPUT SECTION
     # ================================
