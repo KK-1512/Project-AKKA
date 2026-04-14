@@ -28,7 +28,7 @@ with tab1:
 
     st.subheader("Enter CVD Parameters")
     # Display Image
-    st.image("cvd_vickers.png", width=500)
+    st.image("CVD.png", width=500)
 
     st.markdown("---")
     col1, col2 = st.columns(2)
