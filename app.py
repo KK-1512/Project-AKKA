@@ -66,59 +66,73 @@ with tab1:
 # ================================
 with tab2:
 
-    st.subheader("Dataset Analysis")
+    st.subheader("📊 Dataset Analysis")
 
     try:
         df = pd.read_excel("Hardness.xlsx")
         df.columns = ['Temperature_C', 'Time', 'Hardness']
 
-        # Scatter
-        col3, col4 = st.columns(2)
+        # ================================
+        # ROW 1 (2 GRAPHS SIDE BY SIDE)
+        # ================================
+        col1, col2 = st.columns(2)
 
-        with col3:
-            fig, ax = plt.subplots()
+        with col1:
+            fig, ax = plt.subplots(figsize=(5,4))
             ax.scatter(df['Temperature_C'], df['Hardness'])
-            ax.set_title("Temperature vs Hardness")
+            ax.set_title("Temp vs Hardness")
+            ax.set_xlabel("Temp")
+            ax.set_ylabel("Hardness")
             st.pyplot(fig)
 
-        with col4:
-            fig, ax = plt.subplots()
+        with col2:
+            fig, ax = plt.subplots(figsize=(5,4))
             ax.scatter(df['Time'], df['Hardness'])
             ax.set_title("Time vs Hardness")
             st.pyplot(fig)
 
-        # Distribution
-        st.subheader("Hardness Distribution")
-        fig, ax = plt.subplots()
-        sns.histplot(df['Hardness'], kde=True, ax=ax)
-        st.pyplot(fig)
+        # ================================
+        # ROW 2
+        # ================================
+        col3, col4 = st.columns(2)
 
-        # Boxplot
-        st.subheader("Boxplot")
-        fig, ax = plt.subplots()
-        sns.boxplot(data=df, ax=ax)
-        st.pyplot(fig)
+        with col3:
+            fig, ax = plt.subplots(figsize=(5,4))
+            sns.histplot(df['Hardness'], kde=True, ax=ax)
+            ax.set_title("Hardness Distribution")
+            st.pyplot(fig)
 
-        # Heatmap
-        st.subheader("Correlation Heatmap")
-        fig, ax = plt.subplots()
-        sns.heatmap(df.corr(), annot=True, ax=ax)
-        st.pyplot(fig)
+        with col4:
+            fig, ax = plt.subplots(figsize=(5,4))
+            sns.boxplot(data=df, ax=ax)
+            ax.set_title("Boxplot")
+            st.pyplot(fig)
 
-        # Feature Importance
-        st.subheader("Feature Importance")
-        importance = model.feature_importances_
+        # ================================
+        # ROW 3
+        # ================================
+        col5, col6 = st.columns(2)
 
-        fig, ax = plt.subplots()
-        ax.bar(FEATURES, importance)
-        plt.xticks(rotation=45)
-        st.pyplot(fig)
+        with col5:
+            fig, ax = plt.subplots(figsize=(5,4))
+            sns.heatmap(df.corr(), annot=True, ax=ax)
+            ax.set_title("Correlation")
+            st.pyplot(fig)
 
-        # Actual vs Predicted
-        X = df[['Temperature_C', 'Time']]
-        y = df['Hardness']
+        with col6:
+            importance = model.feature_importances_
+            fig, ax = plt.subplots(figsize=(5,4))
+            ax.bar(FEATURES, importance)
+            ax.set_title("Feature Importance")
+            plt.xticks(rotation=30)
+            st.pyplot(fig)
 
-        # recreate features
+        # ================================
+        # ROW 4
+        # ================================
+        col7, col8 = st.columns(2)
+
+        # Create features again
         X_full = pd.DataFrame({
             'Temperature_C': df['Temperature_C'],
             'Deposition_Time_min': df['Time'],
@@ -127,20 +141,22 @@ with tab2:
             'Time_squared': df['Time']**2
         })
 
+        y = df['Hardness']
         y_pred = model.predict(X_full)
 
-        st.subheader("Actual vs Predicted")
-        fig, ax = plt.subplots()
-        ax.scatter(y, y_pred)
-        st.pyplot(fig)
+        with col7:
+            fig, ax = plt.subplots(figsize=(5,4))
+            ax.scatter(y, y_pred)
+            ax.set_title("Actual vs Predicted")
+            st.pyplot(fig)
 
-        # Residual
-        st.subheader("Residual Plot")
-        residuals = y - y_pred
-        fig, ax = plt.subplots()
-        ax.scatter(y_pred, residuals)
-        ax.axhline(0, color='red')
-        st.pyplot(fig)
+        with col8:
+            residuals = y - y_pred
+            fig, ax = plt.subplots(figsize=(5,4))
+            ax.scatter(y_pred, residuals)
+            ax.axhline(0, color='red')
+            ax.set_title("Residual Plot")
+            st.pyplot(fig)
 
     except:
         st.error("Upload Hardness.xlsx to view analysis")
