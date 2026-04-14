@@ -24,8 +24,7 @@ st.markdown(
 # TABS
 # ================================
 tab1, tab2 = st.tabs(["Prediction", "Analysis"])
-st.markdown("## 🔹 Prediction Module")
-st.markdown("## 🔹 Data Analysis Dashboard")
+
 # ================================
 # TAB 1: PREDICTION
 # ================================
@@ -34,16 +33,17 @@ with tab1:
     
     
     # IMAGE ONLY HERE
-    col1, col2, col3 = st.columns([1,2,1])
-
-    with col2:
-        st.image(
-            "CVD.png",
-            caption="CVD Coating & Vickers Hardness Measurement",
-            width=800
-        )
-
-    st.markdown("---")
+   # ================================
+# PERFECT CENTERED IMAGE
+# ================================
+st.markdown(
+    """
+    <div style="text-align: center;">
+        <img src="cvd_vickers.png" width="500" style="border-radius: 10px;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
     st.subheader("Enter CVD Parameters")
 
