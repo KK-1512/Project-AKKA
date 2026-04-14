@@ -39,7 +39,7 @@ with tab1:
 st.markdown(
     """
     <div style="text-align: center;">
-        <img src="cvd_vickers.png" width="500" style="border-radius: 10px;">
+        <img src="CVD.png" width="500" style="border-radius: 10px;">
     </div>
     """,
     unsafe_allow_html=True
