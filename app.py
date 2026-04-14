@@ -24,13 +24,14 @@ st.markdown(
 # TABS
 # ================================
 tab1, tab2 = st.tabs(["Prediction", "Analysis"])
-
+st.markdown("## 🔹 Prediction Module")
+st.markdown("## 🔹 Data Analysis Dashboard")
 # ================================
 # TAB 1: PREDICTION
 # ================================
 
 with tab1:
-    st.markdown("## 🔹 Prediction Module")
+    
     
     # IMAGE ONLY HERE
     col1, col2, col3 = st.columns([1,2,1])
@@ -83,7 +84,7 @@ with tab1:
 # TAB 2: ANALYSIS
 # ================================
 with tab2:
-    st.markdown("## 🔹 Data Analysis Dashboard")
+    
     st.subheader("Dataset Analysis")
 
     try:
