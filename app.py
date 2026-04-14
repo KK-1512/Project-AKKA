@@ -39,7 +39,7 @@ with tab1:
     with col2:
         st.image(
             "CVD.png",
-            width=550
+            width=800
         )
 
     st.markdown("---")
