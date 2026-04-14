@@ -30,34 +30,42 @@ tab1, tab2 = st.tabs(["Prediction", "Analysis"])
 # ================================
 
 with tab1:
-    
-    
-    # IMAGE ONLY HERE
-   # ================================
-# PERFECT CENTERED IMAGE
-# ================================
-    # ================================
-# PERFECT CENTERED IMAGE
-# ================================
-    st.markdown(
-        """
-        <div style="text-align: center;">
-            <img src="CVD.png" width="500" style="border-radius: 10px;">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
 
-    st.subheader("Enter CVD Parameters")
+    # ================================
+    # CENTERED IMAGE (FIXED)
+    # ================================
+    col1, col2, col3 = st.columns([1,2,1])
+
+    with col2:
+        st.image(
+            "CVD.png",
+            width=450
+        )
+
+    st.markdown("---")
+
+    # ================================
+    # INPUT SECTION
+    # ================================
+    st.markdown("### **Enter CVD Parameters**")
 
     col1, col2 = st.columns(2)
 
     with col1:
-        temp = st.number_input("Temperature (°C)", 400.0, 800.0, 600.0)
+        temp = st.number_input(
+            "Temperature (°C)",
+            min_value=400.0,
+            max_value=800.0,
+            value=600.0
+        )
 
     with col2:
-        time = st.number_input("Deposition Time (min)", 30.0, 180.0, 90.0)
-
+        time = st.number_input(
+            "Deposition Time (min)",
+            min_value=30.0,
+            max_value=180.0,
+            value=90.0
+        )
     # Warning
     if temp < 500 or temp > 700 or time < 60 or time > 120:
         st.warning("⚠️ Outside training range (500–700°C, 60–120 min)")
