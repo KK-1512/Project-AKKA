@@ -14,12 +14,12 @@ FEATURES = model_data["features"]
 
 st.set_page_config(page_title="CVD Hardness Predictor", layout="wide")
 
-st.title("🔬 CVD TiN/TiON Hardness Prediction Dashboard")
+st.title("TiN Coating Hardness Prediction System")
 
 # ================================
 # TABS
 # ================================
-tab1, tab2 = st.tabs(["🔮 Prediction", "📊 Analysis"])
+tab1, tab2 = st.tabs(["Prediction", "Analysis"])
 
 # ================================
 # TAB 1: PREDICTION
@@ -66,7 +66,7 @@ with tab1:
 # ================================
 with tab2:
 
-    st.subheader("📊 Dataset Analysis")
+    st.subheader("Dataset Analysis")
 
     try:
         df = pd.read_excel("Hardness.xlsx")
