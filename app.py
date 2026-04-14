@@ -28,6 +28,14 @@ with col1:
 with col2:
     time = st.slider("Deposition Time (min)", 30, 180, 90)
 
+# ================================
+# WARNING FOR OUT-OF-RANGE INPUT
+# ================================
+if temp < 500 or temp > 700 or time < 60 or time > 120:
+    st.warning("⚠️ Input is outside the experimental training range (500–700°C, 60–120 min). Prediction may be unreliable.")
+else:
+    st.success("✅ Input is within the trained experimental range.")
+
 # Feature engineering (same as training)
 def create_features(temp, time):
     return pd.DataFrame({
