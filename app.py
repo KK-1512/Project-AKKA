@@ -34,15 +34,12 @@ with tab1:
     # ================================
     # CENTERED IMAGE (FIXED)
     # ================================
-    col1, col2, col3 = st.columns([1,2,1])
+    col1, col2, col3 = st.columns([1,3,1])
 
     with col2:
-        st.image(
-            "CVD.png",
-            width=800
-        )
+        st.image("CVD.png", width=650)
 
-    st.markdown("---")
+        st.markdown("---")
 
     # ================================
     # INPUT SECTION
