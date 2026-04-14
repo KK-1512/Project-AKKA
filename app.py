@@ -31,6 +31,7 @@ tab1, tab2 = st.tabs(["Prediction", "Analysis"])
 
 with tab1:
     st.markdown("## 🔹 Prediction Module")
+    
     # IMAGE ONLY HERE
     col1, col2, col3 = st.columns([1,2,1])
 
