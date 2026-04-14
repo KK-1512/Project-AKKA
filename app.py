@@ -25,12 +25,12 @@ tab1, tab2 = st.tabs(["Prediction", "Analysis"])
 # TAB 1: PREDICTION
 # ================================
 with tab1:
-
-    st.subheader("Enter CVD Parameters")
     # Display Image
     st.image("CVD.png", width=800)
-
     st.markdown("---")
+    
+    st.subheader("Enter CVD Parameters")
+    
     col1, col2 = st.columns(2)
 
     with col1:
