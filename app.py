@@ -36,7 +36,7 @@ with tab1:
 
     with col2:
         st.image(
-            "cvd_vickers.png",
+            "CVD.png",
             caption="CVD Coating & Vickers Hardness Measurement",
             width=450
         )
