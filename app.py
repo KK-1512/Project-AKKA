@@ -27,7 +27,10 @@ tab1, tab2 = st.tabs(["Prediction", "Analysis"])
 with tab1:
 
     st.subheader("Enter CVD Parameters")
+    # Display Image
+    st.image("CVD.png", use_container_width=True)
 
+    st.markdown("---")
     col1, col2 = st.columns(2)
 
     with col1:
