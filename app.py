@@ -23,10 +23,22 @@ st.write("Predict hardness based on Temperature and Deposition Time")
 col1, col2 = st.columns(2)
 
 with col1:
-    temp = st.slider("Temperature (°C)", 400, 800, 600)
+    temp = st.number_input(
+        "Temperature (°C)",
+        min_value=400.0,
+        max_value=800.0,
+        value=600.0,
+        step=10.0
+    )
 
 with col2:
-    time = st.slider("Deposition Time (min)", 30, 180, 90)
+    time = st.number_input(
+        "Deposition Time (min)",
+        min_value=30.0,
+        max_value=180.0,
+        value=90.0,
+        step=5.0
+    )
 
 # ================================
 # WARNING FOR OUT-OF-RANGE INPUT
